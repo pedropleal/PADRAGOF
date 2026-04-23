@@ -1,6 +1,8 @@
 import java.util.ArrayList; import java.util.List;
 
-// MEMENTO class Memento { private String estado;
+// MEMENTO 
+
+class Memento { private String estado;
 
 public Memento(String estado) {
     this.estado = estado;
@@ -9,7 +11,10 @@ public Memento(String estado) {
 public String getEstado() {
     return estado;
 }
-} // ORIGINATOR class Editor { private String texto;
+} 
+
+// ORIGINATOR class Editor 
+{ private String texto;
 
 public void setTexto(String texto) {
     this.texto = texto;
@@ -28,7 +33,9 @@ public void restaurar(Memento memento) {
 }
 }
 
-// CARETAKER class Historico { private List estados = new ArrayList<>();
+// CARETAKER
+
+class Historico { private List estados = new ArrayList<>();
 
 public void adicionar(Memento m) {
     estados.add(m);
@@ -39,7 +46,9 @@ public Memento get(int index) {
 }
 }
 
-// MAIN public class Main { public static void main(String[] args) { Editor editor = new Editor(); Historico historico = new Historico();
+// MAIN
+
+public class Main { public static void main(String[] args) { Editor editor = new Editor(); Historico historico = new Historico();
 
     editor.setTexto("Versão 1");
     historico.adicionar(editor.salvar());
